@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Changed
+- Downloads: clicking a cover now opens the game entry inside Atlas Library/ Catalog, and clicking the build label (e.g. Full Archive) opens the source thread in your browser.
 - Allow setting folder and program locations by typing or paste a path directly besides using Browse / Select Folder button. 
   - Affected locations:  Atlas Importer, Library path settings,and Emulators. The 7z field path is not touched as it have more requirements than the based one.
   - Path resolution highlighting: red if invalid, green if path exists or pass the check.
