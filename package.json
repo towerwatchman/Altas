@@ -91,9 +91,9 @@
     "pretest:run": "npm run build:extension:icons",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "build": "npm run build:extension:icons && vite build && electron-builder --win --x64",
+    "build": "npm run build:extension:icons && vite build && node scripts/build-patched.js",
     "preview": "vite preview",
-    "publish": "npm run build:extension:icons && vite build && electron-builder --win --x64 -p always",
+    "publish": "npm run build:extension:icons && vite build && node scripts/build-patched.js --publish",
     "build:extension": "node scripts/package-extension.js",
     "build:extension:icons": "node scripts/generate-extension-icons.js",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\" \"electron/**/*.{js,jsx}\"",
@@ -107,9 +107,10 @@
     },
     "publish": {
       "provider": "github",
-      "owner": "towerwatchman",
-      "repo": "Atlas",
-      "releaseType": "release",
+      "owner": "codeon89",
+      "repo": "Atlas-Patched",
+      "releaseType": "draft",
+      "channel": "patched",
       "vPrefixedTagName": true
     },
     "files": [
@@ -184,7 +185,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-virtualized": "^9.22.6",
-    "sharp": "^0.35.0",
+    "sharp": "^0.35.4",
     "sqlite3": "^6.0.1"
   },
   "devDependencies": {
